@@ -542,6 +542,6 @@ function extendingValidatorMessages () {
 
     public function getSourceContext()
     {
-        return new Source("", "javascript/variables.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/javascript/variables.twig");
+        return new Source("", "javascript/variables.twig", "/home/idiavzri/brandat-store.com/mysql/templates/javascript/variables.twig");
     }
 }

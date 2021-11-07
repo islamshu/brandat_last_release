@@ -61,6 +61,6 @@ class __TwigTemplate_337dd59ee12050542221fef23794b8185e91f3842a8d5d6c8965ceac5a0
 
     public function getSourceContext()
     {
-        return new Source("", "login/footer.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/login/footer.twig");
+        return new Source("", "login/footer.twig", "/home/idiavzri/brandat-store.com/mysql/templates/login/footer.twig");
     }
 }

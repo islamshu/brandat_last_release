@@ -471,6 +471,6 @@ class __TwigTemplate_afee0a00fb7593faba8fc511609b7727a2ae544631e77c06eb5fa6fe701
 
     public function getSourceContext()
     {
-        return new Source("", "table/structure/display_table_stats.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/table/structure/display_table_stats.twig");
+        return new Source("", "table/structure/display_table_stats.twig", "/home/idiavzri/brandat-store.com/mysql/templates/table/structure/display_table_stats.twig");
     }
 }

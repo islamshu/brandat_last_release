@@ -64,6 +64,6 @@ class __TwigTemplate_0b605256f88651b6ab5719e2c70e07e7a8bc92c1e4fda84c7eebbeab321
 
     public function getSourceContext()
     {
-        return new Source("", "table/search/column_comparison_operators.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/table/search/column_comparison_operators.twig");
+        return new Source("", "table/search/column_comparison_operators.twig", "/home/idiavzri/brandat-store.com/mysql/templates/table/search/column_comparison_operators.twig");
     }
 }

@@ -10,7 +10,7 @@ class ProductWithoutFlashDeal extends JsonResource
 {
     public function toArray($request)
     {
-        $link = 'https://tujjar-oman.com/product/'.$this->slug;
+        $link = 'https://brandat-store.com/product/'.$this->slug;
         $dec = $this->description_en !=null ? $this->description_en:'a';
         $links =  Share::load($link, $dec)->services('facebook','twitter','whatsapp');
         $brand = array();

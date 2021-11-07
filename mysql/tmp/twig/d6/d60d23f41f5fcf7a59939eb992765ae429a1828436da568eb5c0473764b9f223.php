@@ -258,6 +258,6 @@ $context["record"]) && is_array($__internal_d7fc55f1a54b629533d60b43063289db62e6
 
     public function getSourceContext()
     {
-        return new Source("", "console/display.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/console/display.twig");
+        return new Source("", "console/display.twig", "/home/idiavzri/brandat-store.com/mysql/templates/console/display.twig");
     }
 }

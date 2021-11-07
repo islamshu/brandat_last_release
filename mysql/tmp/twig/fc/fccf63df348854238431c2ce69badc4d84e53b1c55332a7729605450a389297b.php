@@ -300,6 +300,6 @@ class __TwigTemplate_b7f1e111e5591a191f7ddf5f2fb0b4b1ac0f631cf66c21b2d77d4760de7
 
     public function getSourceContext()
     {
-        return new Source("", "columns_definitions/table_fields_definitions.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/columns_definitions/table_fields_definitions.twig");
+        return new Source("", "columns_definitions/table_fields_definitions.twig", "/home/idiavzri/brandat-store.com/mysql/templates/columns_definitions/table_fields_definitions.twig");
     }
 }

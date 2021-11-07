@@ -282,6 +282,6 @@ class __TwigTemplate_7f53709b081a0845b368d949411065fac3d7de42c94922970736e1e97f0
 
     public function getSourceContext()
     {
-        return new Source("", "display/results/checkbox_and_links.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/display/results/checkbox_and_links.twig");
+        return new Source("", "display/results/checkbox_and_links.twig", "/home/idiavzri/brandat-store.com/mysql/templates/display/results/checkbox_and_links.twig");
     }
 }

@@ -59,6 +59,6 @@ class __TwigTemplate_117e31e76d4dd4dca954f11b3f67ad583492521384dcd76176572d140df
 
     public function getSourceContext()
     {
-        return new Source("", "database/structure/collation_definition.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/database/structure/collation_definition.twig");
+        return new Source("", "database/structure/collation_definition.twig", "/home/idiavzri/brandat-store.com/mysql/templates/database/structure/collation_definition.twig");
     }
 }

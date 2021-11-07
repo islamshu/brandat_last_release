@@ -308,6 +308,6 @@ class __TwigTemplate_caacf39c0251f183da0b105fb8b3c475ece93473ef94c90dc6b05c1cebd
 
     public function getSourceContext()
     {
-        return new Source("", "table/search/input_box.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/table/search/input_box.twig");
+        return new Source("", "table/search/input_box.twig", "/home/idiavzri/brandat-store.com/mysql/templates/table/search/input_box.twig");
     }
 }

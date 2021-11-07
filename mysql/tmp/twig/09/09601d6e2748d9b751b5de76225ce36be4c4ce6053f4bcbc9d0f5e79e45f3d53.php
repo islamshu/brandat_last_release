@@ -783,6 +783,6 @@ class __TwigTemplate_8f301670a7b85259b2d157939b5edc572e25747b3b08bdae70ca44afa81
 
     public function getSourceContext()
     {
-        return new Source("", "columns_definitions/column_attributes.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/columns_definitions/column_attributes.twig");
+        return new Source("", "columns_definitions/column_attributes.twig", "/home/idiavzri/brandat-store.com/mysql/templates/columns_definitions/column_attributes.twig");
     }
 }

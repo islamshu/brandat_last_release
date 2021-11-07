@@ -90,7 +90,7 @@ class ProductCollection extends ResourceCollection
 
     public function share($data)
     {
-        $link = 'https://tujjar-oman.com/product/' . $data->slug;
+        $link = 'https://brandat-store.com/product/' . $data->slug;
         if ($data->description_en != null) {
             $dec = $data->description_en;
 

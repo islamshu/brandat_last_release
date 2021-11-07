@@ -184,7 +184,7 @@ class ProductDetailResource extends JsonResource
 
     public function share($data)
     {
-        $link = 'https://tujjar-oman.com/product/' . $data->slug;
+        $link = 'https://brandat-store.com/product/' . $data->slug;
         if ($data->description_en != null) {
             $dec = $data->description_en;
 
@@ -200,7 +200,7 @@ class ProductDetailResource extends JsonResource
 
     public function shareShop($data){
         // dd();
-        $link = 'https://www.tujjar-oman.com/shop/'.$data->user->shop->slug;
+        $link = 'https://www.brandat-store.com/shop/'.$data->user->shop->slug;
         $links= Share::load($link, 'seller in tujjar oman store')->services('facebook', 'whatsapp', 'twitter');
         $links['link']=$link;
         return $links;

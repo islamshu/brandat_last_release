@@ -56,7 +56,7 @@ class SellerCollection extends ResourceCollection
     }
     public function share($data){
         // dd();
-        $link = 'https://www.tujjar-oman.com/shop/'.$data->user->shop->slug;
+        $link = 'https://www.brandat-store.com/shop/'.$data->user->shop->slug;
         	$links= Share::load($link, 'seller in tujjar oman store')->services('facebook', 'whatsapp', 'twitter');
         	$links['link']=$link;
         	return $links;

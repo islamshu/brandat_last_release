@@ -102,6 +102,6 @@ class __TwigTemplate_64ffda047edb4a23bafd40be3b747b2e77c86a15fc41404b112bc7e3bb4
 
     public function getSourceContext()
     {
-        return new Source("", "table/page_with_secondary_tabs.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/table/page_with_secondary_tabs.twig");
+        return new Source("", "table/page_with_secondary_tabs.twig", "/home/idiavzri/brandat-store.com/mysql/templates/table/page_with_secondary_tabs.twig");
     }
 }

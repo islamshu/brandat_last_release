@@ -25,7 +25,7 @@ class ProductResource extends JsonResource
                 }
             }
         }
-        $link = 'https://tujjar-oman.com/product/'.$this->slug;
+        $link = 'https://brandat-store.com/product/'.$this->slug;
         $dec = $this->description_en !=null ? $this->description_en:'a';
         $links =  Share::load($link, $dec)->services('facebook','twitter','whatsapp');
         $brand = array();

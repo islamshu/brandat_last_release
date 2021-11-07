@@ -119,6 +119,6 @@ class __TwigTemplate_5a5b25850cec272bf5afd25ca94361e627109ed03ab9b9f350e4261c546
 
     public function getSourceContext()
     {
-        return new Source("", "table/delete/confirm.twig", "/home/idiavzri/tujjar-oman.com/mysql/templates/table/delete/confirm.twig");
+        return new Source("", "table/delete/confirm.twig", "/home/idiavzri/brandat-store.com/mysql/templates/table/delete/confirm.twig");
     }
 }

@@ -18,7 +18,7 @@ class ShopCollection extends ResourceCollection
                         'name' => $data->user->name,
                         'email' => $data->user->email,
                         'avatar' => $data->user->avatar,
-                        'avatar_original' => $data->user->avatar_original
+                        'avatar_original' => uploaded_asset_nullable($data->user->avatar_original)
                     ],
 //                    'logo' => api_asset($data->logo),
                     'logo' => uploaded_asset_nullable($data->logo),

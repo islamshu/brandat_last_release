@@ -26,8 +26,8 @@ class SellerResource extends JsonResource
                 'id'=>$this->user_id,
                 'name' => $this->user->name,
                 'email' => $this->user->email,
-                'avatar' => $this->user->avatar,
-                'avatar_original' => $this->user->avatar_original
+                'avatar' =>  api_asset($this->user->shop->logo),
+                'avatar_original' =>  api_asset($this->user->shop->logo),
             ],
             'package'=>[
                 'title_ar'=>@$this->user->seller->vendor_package->title,

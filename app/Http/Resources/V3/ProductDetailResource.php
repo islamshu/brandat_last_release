@@ -100,7 +100,7 @@ class ProductDetailResource extends JsonResource
             $user_data = [
                 'name' => $data->user->name,
                 'email' => $data->user->email,
-                'avatar' => $data->user->avatar,
+                'avatar' =>  api_asset($data->user->shop->logo),
                 'avatar_original' => api_asset($data->user->avatar_original),
                 'shop_name' => $data->added_by == 'admin' ? '' : $data->user->shop->name,
                 'shop_logo' => $data->added_by == 'admin' ? '' : uploaded_asset($data->user->shop->logo),

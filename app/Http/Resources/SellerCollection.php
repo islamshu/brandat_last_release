@@ -26,7 +26,7 @@ class SellerCollection extends ResourceCollection
                         'name' => $data->user->name,
                         'email' => $data->user->email,
                         'avatar' => $data->user->avatar,
-                        'avatar_original' => $data->user->avatar_original
+                        'avatar_original' => uploaded_asset_nullable($data->user->avatar_original)
                     ],
                     'share_links'=>$this->share($data),
                     
@@ -44,11 +44,11 @@ class SellerCollection extends ResourceCollection
                     
                     // 'rating'=>
                     'links' => [
-                        'featured' => route('shops.featuredProducts', $data->user->shop->id),
-                        'top' => route('shops.topSellingProducts',  $data->user->shop->id),
-                        'new' => route('shops.newProducts', $data->user->shop->id),
-                        'all' => route('shops.allProducts', $data->user->shop->id),
-                        'brands' => route('shops.brands', $data->user->shop->id)
+                        'featured' => route('v3.shops.featuredProducts', $data->id),
+                        'top' => route('v3.shops.topSellingProducts',  $data->id),
+                        'new' => route('v3.shops.newProducts', $data->id),
+                        'all' => route('v3.shops.allProducts', $data->id),
+                        'brands' => route('v3.shops.brands', $data->id)
                     ]
                 ];
             })

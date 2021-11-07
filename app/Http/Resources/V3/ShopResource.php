@@ -17,7 +17,7 @@ class ShopResource extends JsonResource
                 'name' => $this->user->name,
                 'email' => $this->user->email,
                 'avatar' => $this->user->avatar,
-                'avatar_original' => uploaded_asset_nullable($this->user->avatar_original)
+                'avatar_original' => uploaded_asset_nullable($this->logo),
             ],
 //                    'logo' => api_asset($this->logo),
             'logo' => uploaded_asset_nullable($this->logo),

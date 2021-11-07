@@ -1075,7 +1075,7 @@ if (!function_exists('api_asset')) {
             $url = URL::to('/') .'/public/';
             return  $url .$asset->file_name;
         }
-        return URL::to('/') ."/public/uploads/all/1630418479.jpg";
+        return URL::to('/') ."/public/uploads/all/null_image.jpeg";
     }
 }
 
@@ -1089,7 +1089,7 @@ if (!function_exists('uploaded_asset_nullable')) {
                 return my_asset($asset->file_name);
             }
         }
-        return URL::to('/') ."/public/uploads/all/1630418479.jpg";
+        return URL::to('/') ."/public/uploads/all/null_image.jpeg";
     }
 }
 if (!function_exists('uploaded_assets_nullable')) {
@@ -1104,7 +1104,8 @@ if (!function_exists('uploaded_assets_nullable')) {
                 }
             }
         }else {
-            array_push($photos,my_asset("/public/uploads/all/1630418479.jpg"));
+            
+            array_push($photos,my_asset("/public/uploads/all/null_image.jpeg"));
         }
         return $photos;
     }

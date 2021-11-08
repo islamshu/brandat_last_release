@@ -214,7 +214,7 @@ class SellerController extends BaseController
                 $item['products'][$key]['product_name_en'] = $pro->name;
                 $item['products'][$key]['price'] = $pro->unit_price;
                 $item['products'][$key]['quantity'] = $proo->quantity;
-                $item['products'][$key]['total'] = $proo->quantity * $proo->price;
+                $item['products'][$key]['total'] = $proo->quantity * $pro->unit_price;
                 $item['products'][$key][' link'] = route('products.show', $proo->product_id);
                 $item['products'][$key]['product_details'] = new ProductResource($pro);
                 $item['products'][$key]['variation'] = $proo->variation;

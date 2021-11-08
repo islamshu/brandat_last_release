@@ -212,7 +212,7 @@ class SellerController extends BaseController
                 $item['products'][$key]['id'] = $pro->id;
                 $item['products'][$key]['product_name_ar'] = $pro->name_ar;
                 $item['products'][$key]['product_name_en'] = $pro->name;
-                $item['products'][$key]['price'] = $pro->price;
+                $item['products'][$key]['price'] = $pro->unit_price;
                 $item['products'][$key]['quantity'] = $proo->quantity;
                 $item['products'][$key]['total'] = $proo->quantity * $proo->price;
                 $item['products'][$key][' link'] = route('products.show', $proo->product_id);

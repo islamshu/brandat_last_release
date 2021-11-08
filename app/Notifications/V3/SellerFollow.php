@@ -16,7 +16,7 @@ class SellerFollow extends Notification
      *
      * @return void
      */
-    public function __construct(Follow $follow)
+    public function __construct(Follower $follow)
     {
         $this->follow= $follow;
     }

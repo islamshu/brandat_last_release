@@ -365,7 +365,7 @@ class ThawaniController extends Controller
             ]);
         }
 
-        $amount = 1000 * 1000;
+        $amount = $order->grand_total * 1000;
 
 
         $order_id = rand(0, 99999);

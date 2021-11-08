@@ -386,7 +386,7 @@ class ThawaniController extends Controller
             'client_reference_id' => rand(1000, 9999) . $orderId, ## generating random 4 digits prefix to make sure there will be no duplicate ID error
             'products' => [
 
-                ['name' => 'products from ' . env('APP_NAME'), 'unit_amount' => (int)$amount, 'quantity' => 1],
+                ['name' => 'products from ' . env('APP_NAME'), 'unit_amount' => 500, 'quantity' => 1],
             ],
 
 
@@ -400,7 +400,7 @@ class ThawaniController extends Controller
                 'customer_email' => $customer_email,
             ]
         ];
-          dd($thawani);
+        //   dd($input);
 
         $url = $thawani->generatePaymentUrl($input);
 

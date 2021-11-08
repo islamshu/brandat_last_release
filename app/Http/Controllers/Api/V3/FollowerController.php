@@ -12,9 +12,14 @@ use App\Http\Resources\ProductFollowerCollection;
 use App\Http\Resources\V3\SellerResource;
 use App\User;
 use App\Models\V3\Seller ;
+use App\Models\V3\User as V3User;
+use App\Notifications\V3\SellerFollow;
+use App\Traits\ApiResponser;
+
 class FollowerController extends BaseController
 {
- 
+    use ApiResponser;
+
     public function index(Request $request)
     {
 
@@ -91,6 +96,13 @@ class FollowerController extends BaseController
                 $follow->user_id = auth('api')->id();
                 $follow->seller_id=$request->user_id;
                 $follow->save();
+                $user = V3User::find($follow->seller_id);
+                $user->notify(new SellerFollow($user));
+                $token = @$user->fcm_token;
+                if ($token) {
+                    $this->noti('هناك متابعة جديدة','يرجي الاطلاع علي المتابعين',$token);
+                }
+
                 return $this->sendResponse('success', translate('successfuly add'));
 
             }

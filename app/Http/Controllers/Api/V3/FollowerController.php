@@ -97,6 +97,7 @@ class FollowerController extends BaseController
                 $follow->seller_id=$request->user_id;
                 $follow->save();
                 $user = V3User::find($follow->seller_id);
+                dd($follow);
                 $user->notify(new SellerFollow($follow));
                 $token = @$user->fcm_token;
                 if ($token) {

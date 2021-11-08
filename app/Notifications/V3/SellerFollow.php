@@ -4,7 +4,7 @@ namespace App\Notifications\V3;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use App\Models\Follower;
+use App\Follower;
 
 class SellerFollow extends Notification
 {

@@ -20,7 +20,6 @@ class AuthController extends BaseController
 {
     public function signup(Request $request)
     {
-        dd('ddd');
         if (User::where('email', $request->email)->first())
             return $this->sendError(translate('Email is already in use'));
         if (User::where('phone', $request->phone)->first())

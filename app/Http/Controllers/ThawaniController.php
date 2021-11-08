@@ -400,7 +400,7 @@ class ThawaniController extends Controller
                 'customer_email' => $customer_email,
             ]
         ];
-        //   dd($input);
+          dd($input);
 
         $url = $thawani->generatePaymentUrl($input);
 

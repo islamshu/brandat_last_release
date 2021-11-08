@@ -365,7 +365,7 @@ class ThawaniController extends Controller
             ]);
         }
 
-        $amount = $order->grand_total * 1000;
+        $amount = 999 * 1000;
 
 
         $order_id = rand(0, 99999);
@@ -386,7 +386,7 @@ class ThawaniController extends Controller
             'client_reference_id' => rand(1000, 9999) . $orderId, ## generating random 4 digits prefix to make sure there will be no duplicate ID error
             'products' => [
 
-                ['name' => 'products from ' . env('APP_NAME'), 'unit_amount' =>999, 'quantity' => 1],
+                ['name' => 'products from ' . env('APP_NAME'), 'unit_amount' =>$amount, 'quantity' => 1],
             ],
 
 

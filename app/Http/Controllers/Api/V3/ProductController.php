@@ -422,6 +422,13 @@ class ProductController extends BaseController
                 }
                 $users = User::whereIn('id',$usersId)->get();
                 Notification::send($users, new FolloweProduct($product,User::find(auth('api')->id())));
+                $userss = User::whereIn('id',$usersId)->whereNotNull('fcm_token')->get();
+                foreach($userss as $user){
+                $token = @$user->fcm_token;
+                if ($token) {
+                    $this->noti('لقد تم ادراج منتج جديد','لقد قام التاجر'.' '. $this->user->name .' '.'بادراج منتج جديد',$token);
+                }
+            }
             
 
             return $this->sendResponse($product, translate('products created Successfully.'));

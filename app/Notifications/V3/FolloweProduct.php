@@ -5,6 +5,7 @@ namespace App\Notifications\V3;
 use App\Models\V3\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
+use App\Models\V3\User;
 
 
 class FolloweProduct extends Notification

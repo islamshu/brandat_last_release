@@ -19,6 +19,7 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\Api\BaseController as BaseController;
 use App\Models\V3\User;
 use App\Notifications\V3\FolloweProduct;
+use Illuminate\Support\Facades\Notification;
 
 class ProductController extends BaseController
 {

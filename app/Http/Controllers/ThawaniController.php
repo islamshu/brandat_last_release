@@ -506,7 +506,7 @@ class ThawaniController extends Controller
             }
 
             $club_point->convert_status = 0;
-            dd($club_point,$order->orderDetails);
+            // dd($club_point,$order->orderDetails);
             $club_point->save();
             $club_point_convert_rate = BusinessSetting::where('type', 'club_point_convert_rate')->first()->value;
             $club_point = ClubPoint::findOrFail($club_point->id);

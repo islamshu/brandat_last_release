@@ -48,8 +48,8 @@ class FolloweProduct extends Notification
     {
      return [
     'id'=>$this->product->id,
-    'title_ar'=>'لقد قام التاجر'. $this->user->name .'بادراج منتج جديد',
-    'title_ar'=>'the seller'. $this->user->name .'upload new product',
+    'title_ar'=>'لقد قام التاجر'.' '. $this->user->name .' '.'بادراج منتج جديد',
+    'title_en'=>'the seller'.' '. $this->user->name .' '.'upload new product',
     'route_api'=>'',
 
     

@@ -15,7 +15,8 @@ class GeneralSettingController extends BaseController
     public function index()
     {
         $data['data'] = GeneralSettingResource::collection(GeneralSetting::all());
-        return $data;
+        return $this->sendResponse($data, 'this is all genereal');
+
     }
 
     public function get_noification()

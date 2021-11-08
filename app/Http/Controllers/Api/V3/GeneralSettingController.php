@@ -24,9 +24,9 @@ class GeneralSettingController extends BaseController
         $arr = array();
         $user = collect(User::find(auth('api')->id())->notifications);
         foreach ($user as $key => $no) {
-            $arr[$key]['title_en'] = $no->data['title_en'];
-            $arr[$key]['title_ar'] = $no->data['title_ar'];
-            $arr[$key]['date'] = $no->created_at;
+            $arr[$key]['title_en'] = @$no->data['title_en'];
+            $arr[$key]['title_ar'] = @$no->data['title_ar'];
+            $arr[$key]['date'] = @$no->created_at;
             $arr[$key]['link'] = route('notfy_single', $no->id);
             if ($no->type == Notification::MESSAGE) {
                 $id = $no->data['id'];

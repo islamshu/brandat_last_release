@@ -9,7 +9,7 @@ use App\Models\Follower;
 class SellerFollow extends Notification
 {
     use Queueable;
-    private $follow;
+    public $follow;
 
     /**
      * Create a new notification instance.

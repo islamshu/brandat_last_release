@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V3;
 
+use App\Follower;
 use App\Http\Resources\V3\FlashDealResource;
 use App\Http\Resources\V3\ProductResource;
 use App\Http\Resources\V3\ProductDetailResource;
@@ -16,6 +17,7 @@ use Illuminate\Http\Request;
 use App\Utility\CategoryUtility;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Api\BaseController as BaseController;
+use App\Notifications\V3\FolloweProduct;
 
 class ProductController extends BaseController
 {
@@ -408,7 +410,24 @@ class ProductController extends BaseController
                 $product_stock->save();
             }
             if ($product->save())
-                return $this->sendResponse($product, translate('products created Successfully.'));
+            if(auth('api')->user()->user_type == 'seller'){
+
+          
+                $followes = Follower::where('seller_id',auth('api')->id())->get();
+                $usersId = array();
+                foreach($followes as $follows){
+                    array_push($usersId ,$follows->user_id );
+                }
+                $users = User::whereIn('id',$usersId)->get();
+                Notification::send($users, new FolloweProduct($product,User::find(auth('api')->id())));
+            
+
+            return $this->sendResponse($product, translate('products created Successfully.'));
+        }else{
+            return $this->sendResponse($product, translate('products created Successfully.'));
+
+        }
+
             else
                 return $this->sendError(translate('error occer'));
         } elseif ($atts == 'update') {

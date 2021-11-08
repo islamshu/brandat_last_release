@@ -504,7 +504,9 @@ class ThawaniController extends Controller
                 $total_pts = ($orderDetail->product->earn_point) * $orderDetail->quantity;
                 $club_point->points += $total_pts;
             }
+
             $club_point->convert_status = 0;
+            dd($club_point,$order->orderDetails);
             $club_point->save();
             $club_point_convert_rate = BusinessSetting::where('type', 'club_point_convert_rate')->first()->value;
             $club_point = ClubPoint::findOrFail($club_point->id);

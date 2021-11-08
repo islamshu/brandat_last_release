@@ -395,11 +395,12 @@ class ThawaniController extends Controller
 
             'metadata' => [
                 'order_id' => $order_id,
-                'customer_name' => 'nameen',
-                'customer_phone' => '54545412154',
-                'customer_email' => 'asd@asdas.com',
+                'customer_name' => $customer_name,
+                'customer_phone' => $customer_phone,
+                'customer_email' => $customer_email,
             ]
         ];
+          dd($input);
 
         $url = $thawani->generatePaymentUrl($input);
 

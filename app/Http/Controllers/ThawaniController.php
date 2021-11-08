@@ -395,7 +395,7 @@ class ThawaniController extends Controller
 
             'metadata' => [
                 'order_id' => $order_id,
-                'customer_name' => $customer_name,
+                'customer_name' => 'nameen',
                 'customer_phone' => $customer_phone,
                 'customer_email' => $customer_email,
             ]

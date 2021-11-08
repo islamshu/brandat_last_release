@@ -144,7 +144,7 @@ class SellerController extends BaseController
         $orders = DB::table('orders');
         $orders = $orders->orderBy('orders.created_at', 'desc')
             ->join('order_details', 'orders.id', '=', 'order_details.order_id')
-            ->where('order_details.seller_id', auth('api')->id())
+            ->where('order_details.seller_id', auth('api')->id())->where('orders.payment_status','paid')
             ->select('orders.id')
             ->distinct()->get();
         $orderr = [];
@@ -201,7 +201,8 @@ class SellerController extends BaseController
 
     public function PurchaseHistory()
     {
-        $orders = Order::where('user_id', auth('api')->user()->id)->orderBy('code', 'desc')->get();
+        $orders = Order::where('user_id', auth('api')->user()->id)->where('payment_status','paid')->orderBy('code', 'desc')->get();
+        
         $orderr = [];
         foreach ($orders as $orderq) {
             $item['id'] = $orderq->id;

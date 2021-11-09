@@ -426,10 +426,9 @@ class ProductController extends BaseController
                 foreach($userss as $user){
                 $token = @$user->fcm_token;
                 if ($token) {
-                    $this->noti('لقد تم ادراج منتج جديد','لقد قام التاجر'.' '. auth('api')->user()->name .' '.'🛍️سارع بالشراء',$token);
+                    $this->noti('dd','🛍️سارع بالشراء',$token);
                 }
-            }
-            
+
             
             return $this->sendResponse($product, translate('products created Successfully.'));
         }else{

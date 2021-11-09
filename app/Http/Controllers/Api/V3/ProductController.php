@@ -426,7 +426,7 @@ class ProductController extends BaseController
                 foreach($userss as $user){
                 $token = @$user->fcm_token;
                 if ($token) {
-                    $this->noti('سارع بالشراء 🛍️','لقد قام ' . auth()->user()->name .' بإضافة منتج رائع ',$token);
+                    $this->noti('سارع بالشراء 🛍️','لقد قام ' . auth('api')->user()->name .' بإضافة منتج رائع ',$token);
 
                 }
             }

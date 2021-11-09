@@ -12,7 +12,7 @@ class CategoryResource extends JsonResource
         $a =  [
             'id'=>$this->id,
             'name_ar' => $this->name,
-            'name_en' => $this->name_en,
+            'name_en' => @$this->getTranslation('name','en'),
             'banner' => api_asset($this->banner),
             'icon' => api_asset($this->icon),
             'links' => [

@@ -428,6 +428,7 @@ class ProductController extends BaseController
                 if ($token) {
                     $this->noti('dd','🛍️سارع بالشراء',$token);
                 }
+            }
 
             
             return $this->sendResponse($product, translate('products created Successfully.'));

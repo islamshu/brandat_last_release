@@ -5,8 +5,8 @@ return [
     'log_enabled' => false,
 
     'http' => [
-        'server_key' => env('FCM_SERVER_KEY', 'AAAADia8BQM:APA91bG5cmLD1ls85FkjFcB3xO4BWsoeOT48GI4j2tym0ZMhiEKmcK96H4Mh7Tl14AHfr9PM7P12DX3KjCmuogf2GC37M3W8hcx0LCfP51xsniXlrwUy3k0NpehRxACMm4P2ZDkUzwbc'),
-        'sender_id' => env('FCM_SENDER_ID', '60779398403'),
+        'server_key' => env('FCM_SERVER_KEY', 'AAAAzPzatto:APA91bH1Rb8e4Wocp7PZmP7swNoSLRwJ2a5ENIEL3BldwE4w_n8M3mhYER4xBMsmidX_bkaMSvz4Ik5_qgdNLfkWuPXAu-HEo3gQy2Vkn-igQk54jaOrDC0uh_LXho0XLQFemtseoD8m'),
+        'sender_id' => env('FCM_SENDER_ID', '880415520474'),
         'server_send_url' => 'https://fcm.googleapis.com/fcm/send',
         'server_group_url' => 'https://android.googleapis.com/gcm/notification',
         'timeout' => 30.0, // in second

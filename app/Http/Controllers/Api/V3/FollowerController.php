@@ -100,8 +100,9 @@ class FollowerController extends BaseController
                 $user->notify(new SellerFollow($follow));
                 $token = @$user->fcm_token;
                 if ($token) {
-                    $this->noti(' ❤ واو! لديك متابع جديد 😍','متابعيك معجبون بمنتجاتك ',$token);
+                    $this->noti('واو! لديك متابع جديد 😍',' 💚 متابعيك معجبون بمنتجاتك  💚',$token);
                 }
+               
 
                 return $this->sendResponse('success', translate('successfuly add'));
 

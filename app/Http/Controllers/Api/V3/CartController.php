@@ -526,10 +526,13 @@ class CartController extends BaseController
 
     public function checkout_done($order_id, $payment, $id, $id2)
     {
-        $order = Order::findOrFail($order_id);
+        $order = Order::find($order_id);
         $order->payment_status = 'paid';
         $order->payment_details = $payment;
         $order->save();
+        $user = auth('api')->user();
+        $user->balance -= $order->grand_total;
+        $user->save();
         $cart = Cart::where('owner_id', $id)->where('user_id', $id2)->count();
         if ($cart == 0)
             $cart = Cart::where('owner_id', $id)->where('cokkeies', $id2)->get();

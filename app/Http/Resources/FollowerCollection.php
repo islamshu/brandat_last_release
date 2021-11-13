@@ -26,6 +26,13 @@ class FollowerCollection extends ResourceCollection
                     'user_id' => $data->user->id,
                     'shop_name' => $data->user->shop->name,
                     'shop_name_ar' => $data->user->shop->name_ar,
+                    'logo' => api_asset($data->user->shop->logo),
+                    'user' => [
+                        'name' => $data->user->name,
+                        'email' => $data->user->email,
+                        'avatar' => $data->user->avatar,
+                        'avatar_original' => uploaded_asset_nullable($data->logo),
+                    ],
 
                     // 'shop_ptt'=> $data->user->products,
                     'address_ar' =>City2::find($data->user->shop->address)->name,

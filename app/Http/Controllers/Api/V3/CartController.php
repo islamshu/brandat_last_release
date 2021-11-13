@@ -581,6 +581,12 @@ class CartController extends BaseController
                 }
             }
         }
+        foreach ($order->orderDetails as $detail){
+            $token = @$detail->product->user->fcm_token;
+            if ($token) {
+                $this->noti('هناك طلبية جديدة','يرجي الاطلاع علي قائمة الطلبات هناك طلبية جديدة',$token);
+            }
+        }
 
         $order->commission_calculated = 1;
         $order->save();

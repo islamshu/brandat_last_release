@@ -522,6 +522,7 @@ class CartController extends BaseController
 
     public function checkout_done($order_id, $payment, $id, $id2)
     {
+        dd(auth('api')->user());
         $order = Order::find($order_id);
         $order->payment_status = 'paid';
         $order->payment_details = $payment;

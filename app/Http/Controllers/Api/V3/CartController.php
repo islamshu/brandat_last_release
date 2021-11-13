@@ -21,6 +21,7 @@ use App\Models\V3\BusinessSetting;
 use App\Http\Controllers\ThawaniController;
 use App\Http\Controllers\Api\BaseController as BaseController;
 use App\Notifications\V3\OrderSeller;
+use App\Traits\ApiResponser;
 
 class CartController extends BaseController
 {

@@ -511,13 +511,11 @@ class CartController extends BaseController
         if ($request->payment_type == 'thawani') {
             $thawani = new ThawaniController;
             return $thawani->api_shipp($request, $order, $id, $id2);
-        }else{
+        }elseif($request->payment_type == 'wallet'){
             if (auth('api')->check()) {
                 return $this->checkout_done($order->id, 'wallet', $id, $id2);
-
             }
-            return $this->sendError(translate('There is not enough balance'));
-        }
+       }
     }
 
     public function checkout_done($order_id, $payment, $id, $id2)

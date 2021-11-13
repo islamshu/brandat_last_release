@@ -513,12 +513,8 @@ class CartController extends BaseController
             return $thawani->api_shipp($request, $order, $id, $id2);
         }else{
             if (auth('api')->check()) {
-                $user = auth('api')->user();
-                if ($user->balance >= $order->grand_total) {
-                    $user->balance -= $order->grand_total;
-                    $user->save();
-                    return $this->checkout_done($order->id, 'wallet', $id, $id2);
-                }
+                return $this->checkout_done($order->id, 'wallet', $id, $id2);
+
             }
             return $this->sendError(translate('There is not enough balance'));
         }
@@ -533,6 +529,7 @@ class CartController extends BaseController
         $user = auth('api')->user();
         $user->balance -= $order->grand_total;
         $user->save();
+        dd($user);
         $cart = Cart::where('owner_id', $id)->where('user_id', $id2)->count();
         if ($cart == 0)
             $cart = Cart::where('owner_id', $id)->where('cokkeies', $id2)->get();

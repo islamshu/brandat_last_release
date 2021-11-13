@@ -480,7 +480,7 @@ class CartController extends BaseController
         foreach ($cartItems as $cartItem) {
             $product = Product::findOrFail($cartItem->product_id);
             if ($cartItem->variation) {
-                $product_stocks = $product->stocks->where('variant', $cartItem->variation)->first();
+                $product_stocks = $product->stocks->first();
                 $product_stocks->qty -= $cartItem->quantity;
                 $product_stocks->save();
             } else

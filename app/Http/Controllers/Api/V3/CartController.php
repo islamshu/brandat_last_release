@@ -24,6 +24,8 @@ use App\Notifications\V3\OrderSeller;
 
 class CartController extends BaseController
 {
+    use ApiResponser;
+
     public function get_count_cart()
     {
         if (auth('api')->check()) {

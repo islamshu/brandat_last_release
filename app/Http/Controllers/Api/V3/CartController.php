@@ -508,7 +508,7 @@ class CartController extends BaseController
                 }
             }
         }
-        dd('dddd');
+        dd('islam');
         if ($request->payment_type == 'thawani') {
             $thawani = new ThawaniController;
             return $thawani->api_shipp($request, $order, $id, $id2);

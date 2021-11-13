@@ -513,9 +513,11 @@ class CartController extends BaseController
             return $thawani->api_shipp($request, $order, $id, $id2);
         }elseif($request->payment_type == 'wallet'){
             if (auth('api')->check()) {
+                dd('dd');
                 return $this->checkout_done($order->id, 'wallet', $id, $id2);
             }
-       }
+            return $this->sendError(translate('There is not enough balance'));
+        }
     }
 
     public function checkout_done($order_id, $payment, $id, $id2)

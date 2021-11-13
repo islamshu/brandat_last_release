@@ -20,6 +20,7 @@ use App\Models\V3\Address;
 use App\Models\V3\BusinessSetting;
 use App\Http\Controllers\ThawaniController;
 use App\Http\Controllers\Api\BaseController as BaseController;
+use App\Notifications\V3\OrderSeller;
 
 class CartController extends BaseController
 {
@@ -577,8 +578,43 @@ class CartController extends BaseController
                 }
             }
         }
+
         $order->commission_calculated = 1;
         $order->save();
+        $seller_id = @$order->orderDetails->first()->seller_id;
+        $seller = User::find($seller_id);
+        if($seller != null){
+        $user_type = @$seller->user_type;
+        }
+        if($user_type == 'admin' || $user_type == null || $seller == null){
+            $shop = env('APP_NAME');
+        }else{
+            $shop=$seller->shop;
+        }
+        $array['view'] = 'emails.invoice';
+        $array['subject'] = translate('Your order has been placed') . ' - ' . $order->code;
+        $array['from'] = env('MAIL_USERNAME');
+        $array['order'] = $order;
+        $seller_id = @$order->orderDetails->first()->seller_id;
+        $seller = User::find($seller_id);
+        if($seller != null){
+        $user_type = @$seller->user_type;
+        }
+        if($user_type == 'admin' || $user_type == null || $seller == null){
+            $shop = env('APP_NAME');
+        }else{
+            $shop=$seller->shop;
+        }
+        $user = User::where('id', $order->orderDetails->first()->seller_id)->first();
+        $user->notify(new OrderSeller($order));
+        if (env('MAIL_USERNAME') != null && $order->user_id != null) {
+            try {
+                Mail::to(json_decode($order->shipping_address)->email)->queue(new InvoiceEmailManager($array));
+                Mail::to($user->email)->queue(new InvoiceEmailManager($array));
+            } catch (\Exception $e) {
+                return $e;
+            }
+        }
         /*if (env('MAIL_USERNAME') != null) {
             try {
                 Mail::to(User::where('user_type', 'admin')->first()->email)->queue(new InvoiceEmailManager($array));
